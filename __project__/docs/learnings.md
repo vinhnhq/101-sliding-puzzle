@@ -28,4 +28,8 @@ The file is a buffer, not a destination. Without these rules it becomes a gravey
 
 ## Entries
 
-_(empty — add entries below this line)_
+## 2026-05-04 · React experimental dropped `unstable_` prefix on `ViewTransition`
+
+README §7 imports `unstable_ViewTransition as ViewTransition` from `"react"`. The pinned `react@experimental 0.0.0-experimental-f4e0d4ed-20260429` actually exports it as plain `ViewTransition` (and `Activity` likewise). Vite 8's SSR module-runner caught this with a "Named export 'unstable_ViewTransition' not found" error and silently fell back to client rendering — easy to miss without inspecting `curl /` output.
+
+**Promote?** yes — README needs a note that the API has moved past `unstable_`, since the README's §6/§7 still document the old name. Also worth a CLAUDE.md note that the `unstable_*` prefix in the README is stale relative to current React experimental exports.
