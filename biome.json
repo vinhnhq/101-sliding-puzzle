@@ -1,0 +1,55 @@
+{
+	"$schema": "https://biomejs.dev/schemas/2.4.13/schema.json",
+	"files": {
+		"includes": [
+			"**",
+			"!**/node_modules",
+			"!**/.output",
+			"!**/.nitro",
+			"!**/.tanstack",
+			"!**/.vercel",
+			"!**/build",
+			"!**/dist",
+			"!**/public",
+			"!.claude",
+			"!.agents",
+			"!src/routeTree.gen.ts",
+			"!skills-lock.json",
+			"!bun.lock",
+			"!**/*.css"
+		]
+	},
+	"formatter": { "indentStyle": "tab" },
+	"javascript": { "formatter": { "quoteStyle": "double" } },
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true,
+			"style": {
+				"useFilenamingConvention": {
+					"level": "error",
+					"options": { "filenameCases": ["kebab-case"] }
+				}
+			}
+		}
+	},
+	"overrides": [
+		{
+			"includes": [
+				"src/routes/__root.tsx",
+				"src/routes/_*.tsx",
+				"src/routes/_*/**",
+				"src/routes/**/*.$*.tsx",
+				"src/routes/**/*.$*.ts",
+				"src/routes/**/*_.$*.tsx",
+				"src/routes/**/\\[*\\]*.ts",
+				"src/routes/**/\\[*\\]*.tsx"
+			],
+			"linter": {
+				"rules": {
+					"style": { "useFilenamingConvention": "off" }
+				}
+			}
+		}
+	]
+}
