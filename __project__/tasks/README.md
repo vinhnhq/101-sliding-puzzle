@@ -22,4 +22,4 @@ See [plan.md](sprint-01-core-puzzle-build/plan.md) · [tasks.md](sprint-01-core-
 | T106 | `Puzzle` Activity switcher (`src/components/puzzle.tsx`) | ✓ done |
 | T107 | Wire home route (`src/routes/index.tsx`) | ✓ done |
 | T108 | Mobile QA pass | ✓ done |
-| T109 | Vercel deploy | ↷ stretch |
+| T109 | Vercel deploy | ✓ done |

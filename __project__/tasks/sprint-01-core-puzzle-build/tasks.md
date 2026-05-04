@@ -15,7 +15,7 @@ Status legend: ✓ done · → in progress · · backlog · ↷ stretch · ⏸ b
 
 ## Stretch (pick up if capacity allows)
 
-- [ ] ↷ **T109** · Vercel deploy · ~20m · sprint demos on localhost; deploy is icing
+- [x] ✓ **T109** · Vercel deploy — live at https://101-sliding-puzzle.vercel.app (promoted directly to prod on first deploy via `vercel deploy --yes`)
 
 ## Blocked (waiting on external dependency)
 
