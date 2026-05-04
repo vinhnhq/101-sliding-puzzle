@@ -1,11 +1,12 @@
-// React@experimental exports `unstable_ViewTransition` and stable `Activity`
-// (since React 19.2) at runtime, but @types/react 19.0.x doesn't declare them.
-// This file augments the module so call sites stay type-safe.
+// React@experimental exports `ViewTransition` and `Activity` directly (the
+// `unstable_` prefix from earlier docs has been dropped). @types/react 19.0.x
+// doesn't declare either yet, so we augment the module to keep call sites
+// type-safe.
 
 import type { ComponentType, Key, ReactNode } from "react";
 
 declare module "react" {
-	export const unstable_ViewTransition: ComponentType<{
+	export const ViewTransition: ComponentType<{
 		name?: string;
 		children?: ReactNode;
 	}>;
