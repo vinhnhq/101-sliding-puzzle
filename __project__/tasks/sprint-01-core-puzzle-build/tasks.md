@@ -4,14 +4,14 @@ Status legend: ✓ done · → in progress · · backlog · ↷ stretch · ⏸ b
 
 ## Committed (must finish to release)
 
-- [ ] **T101** · Game logic module (`src/lib/puzzle.ts`) · ~20m
-- [ ] **T102** · Mobile-responsive game styles (`src/styles/app.css`) · ~20m
-- [ ] **T103** · `Tile` component (`src/components/tile.tsx`) · ~10m
-- [ ] **T104** · `Board` component (`src/components/board.tsx`) · ~20m
-- [ ] **T105** · `Game` component (`src/components/game.tsx`) · ~15m
-- [ ] **T106** · `Puzzle` Activity switcher (`src/components/puzzle.tsx`) · ~20m
-- [ ] **T107** · Wire home route (`src/routes/index.tsx`) · ~5m
-- [ ] **T108** · Mobile QA pass · ~30m
+- [x] ✓ **T101** · Game logic module (`src/lib/puzzle.ts`)
+- [x] ✓ **T102** · Mobile-responsive game styles (`src/styles/app.css`)
+- [x] ✓ **T103** · `Tile` component (`src/components/tile.tsx`)
+- [x] ✓ **T104** · `Board` component (`src/components/board.tsx`)
+- [x] ✓ **T105** · `Game` component (`src/components/game.tsx`)
+- [x] ✓ **T106** · `Puzzle` Activity switcher (`src/components/puzzle.tsx`)
+- [x] ✓ **T107** · Wire home route (`src/routes/index.tsx`)
+- [x] ✓ **T108** · Mobile QA pass — SSR verified clean; manual real-device confirmation pending (see retro)
 
 ## Stretch (pick up if capacity allows)
 

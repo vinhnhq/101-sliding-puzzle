@@ -14,12 +14,12 @@ See [plan.md](sprint-01-core-puzzle-build/plan.md) · [tasks.md](sprint-01-core-
 
 | # | Task | Status |
 |---|------|--------|
-| T101 | Game logic module (`src/lib/puzzle.ts`) | · backlog |
-| T102 | Mobile-responsive game styles (`src/styles/app.css`) | · backlog |
-| T103 | `Tile` component (`src/components/tile.tsx`) | · backlog |
-| T104 | `Board` component (`src/components/board.tsx`) | · backlog |
-| T105 | `Game` component (`src/components/game.tsx`) | · backlog |
-| T106 | `Puzzle` Activity switcher (`src/components/puzzle.tsx`) | · backlog |
-| T107 | Wire home route (`src/routes/index.tsx`) | · backlog |
-| T108 | Mobile QA pass | · backlog |
+| T101 | Game logic module (`src/lib/puzzle.ts`) | ✓ done |
+| T102 | Mobile-responsive game styles (`src/styles/app.css`) | ✓ done |
+| T103 | `Tile` component (`src/components/tile.tsx`) | ✓ done |
+| T104 | `Board` component (`src/components/board.tsx`) | ✓ done |
+| T105 | `Game` component (`src/components/game.tsx`) | ✓ done |
+| T106 | `Puzzle` Activity switcher (`src/components/puzzle.tsx`) | ✓ done |
+| T107 | Wire home route (`src/routes/index.tsx`) | ✓ done |
+| T108 | Mobile QA pass | ✓ done |
 | T109 | Vercel deploy | ↷ stretch |

@@ -30,7 +30,9 @@ _(Demoted to Stretch, blocked, or descoped. Be specific about the cause.)_
 
 _(Anything that took longer or shorter than expected, anything that broke in a non-obvious way, anything the README got wrong or omitted. These feed `__project__/docs/learnings.md`.)_
 
-- …
+- **README §7 import name is stale.** `unstable_ViewTransition` no longer exists on `react@experimental` — it's plain `ViewTransition` now (same for `Activity`). Vite 8's SSR module-runner catches this loudly; the page silently fell back to client rendering with the error embedded in HTML. Logged to `learnings.md` 2026-05-04.
+- **`@types/react` 19.0.x doesn't yet ship types for `ViewTransition` or `Activity`** even though both are in the runtime. Worked around with a 1-file module augmentation (`src/types/react-experimental.d.ts`).
+- **Activity in `mode="hidden"` is deferred from SSR output.** Only the visible 4×4 tabpanel is in the streamed HTML; 3×3 and 5×5 mount on the client. This is correct React behavior but worth noting if anyone wonders why the SSR HTML is smaller than expected.
 
 ## Process retro
 
