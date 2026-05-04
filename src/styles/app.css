@@ -1,30 +1,181 @@
 @import 'tailwindcss' source('../');
 
-@layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentcolor);
-  }
+:root {
+  --bg: #0a0a0a;
+  --fg: #f5f5f5;
+  --muted: #a3a3a3;
+  --border: #262626;
+  --accent: #3b82f6;
+
+  /* Cap board on desktop, fluid on mobile */
+  --board-size: min(90vw, 420px);
 }
 
-@layer base {
-  html {
-    color-scheme: light dark;
-  }
+* {
+  box-sizing: border-box;
+}
 
-  * {
-    @apply border-gray-200 dark:border-gray-800;
-  }
+html,
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+  /* Stop iOS rubber-band scroll past the page */
+  overscroll-behavior-y: contain;
+}
 
-  html,
-  body {
-    @apply text-gray-900 bg-gray-50 dark:bg-gray-950 dark:text-gray-200;
-  }
+body {
+  /* dvh handles iOS Safari address-bar resize without jumping */
+  min-height: 100dvh;
+  /* Respect iPhone home indicator + notch */
+  padding: env(safe-area-inset-top) env(safe-area-inset-right)
+    env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
 
-  .using-mouse * {
-    outline: none !important;
+button {
+  font-family: inherit;
+  /* Eliminate 300ms tap delay + double-tap zoom on tiles & buttons */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 16px;
+  text-align: center;
+}
+
+.page h1 {
+  font-size: clamp(24px, 6vw, 32px);
+  margin: 0 0 8px;
+}
+
+.page .lede {
+  color: var(--muted);
+  font-size: clamp(14px, 3.5vw, 16px);
+  margin: 0 0 24px;
+}
+
+/* Tabs ===================================================== */
+
+.tabs {
+  display: inline-flex;
+  gap: 4px;
+  background: #171717;
+  padding: 4px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+.tabs button {
+  padding: 8px 14px;
+  background: transparent;
+  color: var(--muted);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  /* iOS HIG min tap target */
+  min-height: 40px;
+  min-width: 56px;
+}
+.tabs button.active {
+  background: var(--fg);
+  color: var(--bg);
+}
+
+/* Stats / win banner ======================================= */
+
+.stats {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin-bottom: 16px;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+  font-size: 14px;
+}
+.stats strong {
+  color: var(--fg);
+}
+
+.win-banner {
+  background: linear-gradient(135deg, #10b981, #06b6d4);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+/* Board ===================================================== */
+
+.board {
+  display: grid;
+  gap: 4px;
+  background: #171717;
+  padding: 6px;
+  border-radius: 12px;
+  margin: 0 auto 20px;
+  width: var(--board-size);
+  aspect-ratio: 1;
+  grid-template-columns: repeat(var(--size), 1fr);
+  grid-template-rows: repeat(var(--size), 1fr);
+}
+
+.tile {
+  background: linear-gradient(135deg, var(--accent), #8b5cf6);
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-weight: 700;
+  /* Font scales with board size and tile count */
+  font-size: clamp(16px, calc(var(--board-size) / var(--size) * 0.4), 36px);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: filter 100ms;
+}
+.tile:hover {
+  filter: brightness(1.15);
+}
+.tile:active {
+  filter: brightness(0.9);
+}
+
+.shuffle-btn {
+  padding: 12px 24px;
+  background: transparent;
+  color: var(--fg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  min-height: 44px; /* iOS HIG min tap target */
+}
+.shuffle-btn:hover {
+  border-color: #525252;
+}
+
+/* View Transition timing
+   220ms feels game-y. Bump to 350ms+ for showroom feel. */
+
+::view-transition-group(*) {
+  animation-duration: 220ms;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation-duration: 1ms !important;
   }
 }
