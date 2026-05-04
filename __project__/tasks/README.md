@@ -9,13 +9,17 @@ Backlog (not-yet-committed work): [`backlog/`](backlog/)
 
 ---
 
-<!--
-  Sprint sections go below. One section per sprint. Example:
+## Sprint 01 — Core Puzzle Build
+See [plan.md](sprint-01-core-puzzle-build/plan.md) · [tasks.md](sprint-01-core-puzzle-build/tasks.md) · [retro.md](sprint-01-core-puzzle-build/retro.md)
 
-  ## Sprint 01 — <Name>
-  See [plan.md](sprint-01-name/plan.md) · [todo.md](sprint-01-name/todo.md)
-
-  | # | Task | Status |
-  |---|------|--------|
-  | T101 | <task title> | · backlog |
--->
+| # | Task | Status |
+|---|------|--------|
+| T101 | Game logic module (`src/lib/puzzle.ts`) | · backlog |
+| T102 | Mobile-responsive game styles (`src/styles/app.css`) | · backlog |
+| T103 | `Tile` component (`src/components/tile.tsx`) | · backlog |
+| T104 | `Board` component (`src/components/board.tsx`) | · backlog |
+| T105 | `Game` component (`src/components/game.tsx`) | · backlog |
+| T106 | `Puzzle` Activity switcher (`src/components/puzzle.tsx`) | · backlog |
+| T107 | Wire home route (`src/routes/index.tsx`) | · backlog |
+| T108 | Mobile QA pass | · backlog |
+| T109 | Vercel deploy | ↷ stretch |
