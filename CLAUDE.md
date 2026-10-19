@@ -77,4 +77,4 @@ Trivial changes (typos, config tweaks): lint + typecheck + push. No spec/plan ne
 ## Notes
 
 - **Scaffold cruft to clean up:** `src/components/{DefaultCatchBoundary,NotFound,PostError,UserError}.tsx` and `src/utils/loggingMiddleware.tsx` violate kebab-case. They came from the TanStack Start example and most of the example routes (`/posts`, `/users`, `/route-a`, `/deferred`) will be stripped before the puzzle build starts. Renames or deletions handled in a follow-up commit.
-- **Plugin install required (one-time, per machine):** in Claude Code, run `/plugin install agent-skills@anthropic` to install the plugin our `.claude/commands/*.md` invoke. The settings.json declares it; the harness has to actually install it.
+- **Plugin install required (one-time, per machine):** in Claude Code, run `/plugin install agent-skills@addy-agent-skills` to install the plugin our `.claude/commands/*.md` invoke. The settings.json declares it; the harness has to actually install it. (Marketplace: `addyosmani/agent-skills`.)

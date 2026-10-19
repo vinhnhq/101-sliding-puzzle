@@ -1,5 +1,3 @@
 {
-  "enabledPlugins": {
-    "agent-skills@anthropic": true
-  }
+  "enabledPlugins": {}
 }
